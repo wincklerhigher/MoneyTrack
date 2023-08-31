@@ -1,0 +1,23 @@
+@model MoneyTrack.Models.Contato
+@{
+        ViewData["Title"] = "Login";
+}
+
+<form method="Post" asp-action="Login">
+<p>
+    <label asp-for="Login"> Informe seu Login: </label>
+    <input asp-for="Login"/>  
+</p>
+<p>
+    <label asp-for="Senha"> Informe sua Senha: </label>
+    <input asp-for="Senha" type="password"/>
+</p>
+<p>
+    <input type="submit" value="Entrar"/>
+</p>
+
+</form>
+
+<p>
+    @ViewBag.Mensagem
+</p>

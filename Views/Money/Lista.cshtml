@@ -1,0 +1,31 @@
+@model List<MoneyTrack.Models.Contato>
+@{
+    ViewData["Title"] = "Lista";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Mensagem</th>
+            <th>Data de Envio</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contato in Model)
+        {
+            <tr>
+                <td>@contato.IdContato</td>
+                <td>@contato.Nome</td>
+                <td>@contato.Email</td>
+                <td>@contato.Mensagem</td>
+                <td>@contato.DataEnvio</td>
+                <td>
+                    <a href="/Money/Remover?Id=@contato.IdContato">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

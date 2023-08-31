@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crypto Price Display</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #bdb8b8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .price-container {
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(235, 241, 149);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .price-label {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .price-value {
+            font-size: 36px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="price-container">
+        <h1>Real-Time BTC Price</h1>
+        <div class="price-value" id="BTC-price">Loading...</div>
+    </div>
+
+    <script>
+        async function updateBTCPrice() {
+            try {
+                const apiKey = 'df057fd0-ea21-4319-8acd-6dd57cd9aa6b'; // Minha CoinCap API key
+                const apiUrl = `https://api.coincap.io/v2/assets/bitcoin`;
+                const response = await fetch(apiUrl, {
+                    headers: {
+                        'Authorization': `Bearer ${apiKey}`
+                    }
+                });
+                const data = await response.json();
+                const btcPrice = parseFloat(data.data.priceUsd);
+
+                const formattedPrice = btcPrice.toLocaleString('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                });
+
+                document.getElementById('BTC-price').textContent = formattedPrice;
+            } catch (error) {
+                console.error('Error fetching BTC price:', error);
+            }
+        }
+
+        updateBTCPrice();
+        setInterval(updateBTCPrice, 30000); // 30 segundos
+    </script>
+
+</body>
+</html>
