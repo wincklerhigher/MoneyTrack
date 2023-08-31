@@ -1,4 +1,4 @@
-#Money Track - Gestão de Finanças
+# Money Track - Gestão de Finanças
 
 > **Neste projeto, aprimorei a aplicação web ao integrá-la com um banco de dados. O objetivo foi transformar o sistema em algo funcional e dinâmico, permitindo o armazenamento e recuperação de dados essenciais para o funcionamento da aplicação.**
 
@@ -11,3 +11,7 @@
 **Agradeço a oportunidade de desenvolver este projeto, aprendendo e aplicando conceitos importantes de desenvolvimento web e banco de dados.**
 
 *Atenção: O código-fonte e a exportação do banco de dados estão disponíveis neste repositório. Sinta-se à vontade para explorar e testar meu trabalho!*
+
+##
+
+![Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=wincklerhigher&repo=MoneyTrack)
