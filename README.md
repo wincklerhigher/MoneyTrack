@@ -11,7 +11,3 @@
 **Agradeço a oportunidade de desenvolver este projeto, aprendendo e aplicando conceitos importantes de desenvolvimento web e banco de dados.**
 
 *Atenção: O código-fonte e a exportação do banco de dados estão disponíveis neste repositório. Sinta-se à vontade para explorar e testar meu trabalho!*
-
-##
-
-[![Top Languages](https://github-language-stats.vercel.app/api/top-langs/?username=wincklerhigher&repo=MoneyTrack)](https://github.com/wincklerhigher/MoneyTrack)
