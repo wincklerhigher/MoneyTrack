@@ -14,4 +14,4 @@
 
 ##
 
-![Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=wincklerhigher&repo=MoneyTrack)
+[![Top Languages](https://github-language-stats.vercel.app/api/top-langs/?username=wincklerhigher&repo=MoneyTrack)](https://github.com/wincklerhigher/MoneyTrack)
