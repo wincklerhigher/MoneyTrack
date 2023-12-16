@@ -15,5 +15,7 @@ CREATE TABLE Financas (
     Valor DECIMAL(10, 2),
     Descrição TEXT, 
     DataTransacao DATETIME,
-    PRIMARY KEY (IdFinancas) 
+    IdContato INT,
+    PRIMARY KEY (IdFinancas),
+    FOREIGN KEY (IdContato) REFERENCES Contato(IdContato) ON DELETE CASCADE
 );
