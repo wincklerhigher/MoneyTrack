@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "T0pnzpdK9x2DKm0BDSDxt0nYQbaFNvFeMv48vJe6g0FD5NNJTVbMrME9xyvajjSUUvL77Fd4pQrHyF+QkAl32w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\MoneyTrack.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Winckler\\.nuget\\packages\\mysqlconnector\\2.0.0\\mysqlconnector.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
