@@ -1,41 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Crypto Price Display</title>
-    <style>
-        
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #bdb8b8;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        .price-container {
-            text-align: center;
-            padding: 20px;
-            background-color: rgb(235, 241, 149);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .price-label {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .price-value {
-            font-size: 36px;
-            color: #007bff;
-        }
-    </style>
+    <title>Crypto Price Display</title>    
+    <link rel="stylesheet" type="text/css" href="/css/btc.css">
 </head>
-<body>
+<body>    
+
+    <nav>
+        <ul>    
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>    
+        </ul>
+    </nav>
+
     <div class="price-container">
         <h1>Real-Time BTC Price</h1>
         <div class="price-value" id="BTC-price">Loading...</div>

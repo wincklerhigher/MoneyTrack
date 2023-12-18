@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Http;
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MoneyTrack</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site.css" />    
+    <link rel="stylesheet" href="~/css/home.css" />
 </head>
 <body>
     <header>
@@ -19,18 +21,17 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">                           
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>                            
+                        </li> 
+                        @if(Context.Session.GetInt32("IdContato") == null)
+                        {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Cadastro" asp-action="Login">Login</a>
                         </li>
+                        }
                         @if(Context.Session.GetInt32("IdContato") != null) 
-                        {
-                        <li>
+                        {                        
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Cadastro" asp-action="Contato">Contato</a>
                         </li>
@@ -41,14 +42,17 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Cadastro" asp-action="Lista">Listagem</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cadastro" asp-action="BTC">BTC Real-Time</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cadastro" asp-action="BTC">BTC Preço</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Cadastro" asp-action="Logout">Sair</a>
+                        </li>    
+                        <li class="nav-item">
+                        <span class="nav-link text-dark">
+                            Usuário Logado: <strong>@Context.Session.GetString("NomeUsuario")</strong>
+                        </span>
                         </li>
-                        @Context.Session.GetString("NomeUsuario")
-                        </li>
-                        }
+                        }                        
                     </ul>
                 </div>
             </div>
@@ -60,9 +64,10 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer">
         <div class="container">
-            &copy; 2023 - MoneyTrack - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
+            &copy; 2023 - MoneyTrack
+            <img src="https://i.imgur.com/U0amSpp.png" class="footer-image">            
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

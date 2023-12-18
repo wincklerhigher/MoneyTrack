@@ -62,6 +62,34 @@ namespace MoneyTrack.Controllers
         return View();
     }
 
+    public IActionResult Editar(int Id)
+{
+    MoneyTrackRepository repository = new MoneyTrackRepository();
+    Contato contato = repository.BuscarPorId(Id);    
+
+    if (contato == null)
+    {
+        return RedirectToAction("Lista", "Money");
+    }
+
+    return View(contato);
+}
+
+[HttpPost]
+public IActionResult Editar(Contato contato)
+{
+    if (!ModelState.IsValid)
+    {
+        return View(contato);
+    }
+
+    MoneyTrackRepository repository = new MoneyTrackRepository();
+    repository.AtualizarContato(contato);
+
+    ViewBag.Mensagem = "Contato atualizado com sucesso!";
+    return View(contato);
+}
+
     [HttpPost]
     public IActionResult Login(Contato contato)
     {

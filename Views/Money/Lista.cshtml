@@ -3,6 +3,10 @@
     ViewData["Title"] = "Lista";
 }
 
+<head>
+    <link rel="stylesheet" href="~/css/listagem.css" />
+</head>
+
 <table class="table">
     <thead>
         <tr>
@@ -11,6 +15,7 @@
             <th>Email</th>
             <th>Mensagem</th>
             <th>Data de Envio</th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -22,9 +27,10 @@
                 <td>@contato.Email</td>
                 <td>@contato.Mensagem</td>
                 <td>@contato.DataEnvio</td>
-                <td>
+                <td class="user-actions">
                     <a href="/Money/Remover?Id=@contato.IdContato">Excluir</a>
-                </td>
+                    <a href="/Money/Editar?Id=@contato.IdContato">Editar</a>
+                </td>                
             </tr>
         }
     </tbody>

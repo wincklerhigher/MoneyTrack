@@ -9,7 +9,7 @@ namespace MoneyTrack
 {
     public class MoneyTrackRepository
     {
-        private const string DadosConexao = "Database=moneytrack; Data Source=localhost; User Id=root; AllowZeroDateTime=True;";
+        private const string DadosConexao = "Database=moneytrack; Data Source=localhost; User Id=root; AllowZeroDateTime=True; Allow User Variables=True;";
 
         public void TesteConexao()
         {
@@ -48,7 +48,7 @@ namespace MoneyTrack
 
             comando.Parameters.AddWithValue("@Nome", contato.Nome);
             comando.Parameters.AddWithValue("@Email", contato.Email);
-            comando.Parameters.AddWithValue("@Mensagem", contato.Mensagem);
+            comando.Parameters.AddWithValue("@Mensagem", (object)contato.Mensagem ?? DBNull.Value);
             comando.Parameters.AddWithValue("@DataEnvio", contato.DataEnvio);
             comando.Parameters.AddWithValue("@Login", contato.Login);
             comando.Parameters.AddWithValue("@Senha", contato.Senha);
@@ -145,6 +145,27 @@ namespace MoneyTrack
     }
     return listaContatos;
         }
+
+        public void AtualizarContato(Contato contato)
+{
+    MySqlConnection conexao = new MySqlConnection(DadosConexao);
+    conexao.Open();
+
+    string query = "UPDATE Contato SET Nome = @Nome, Email = @Email, Mensagem = @Mensagem, Login = @Login, Senha = @Senha WHERE IdContato = @IdContato";
+
+    MySqlCommand comando = new MySqlCommand(query, conexao);
+
+    comando.Parameters.AddWithValue("@IdContato", contato.IdContato);
+    comando.Parameters.AddWithValue("@Nome", contato.Nome);
+    comando.Parameters.AddWithValue("@Email", contato.Email);
+    comando.Parameters.AddWithValue("@Mensagem", (object)contato.Mensagem ?? DBNull.Value);    
+    comando.Parameters.AddWithValue("@Login", contato.Login);
+    comando.Parameters.AddWithValue("@Senha", contato.Senha);
+
+    comando.ExecuteNonQuery();
+
+    conexao.Close();
+}
 
         public Contato BuscarPorId(int IdContato)
         {
