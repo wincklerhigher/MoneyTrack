@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\css\\btc.css"
     },
     {
+      "Id": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\css\\contato.css",
+      "PackagePath": "staticwebassets\\css\\contato.css"
+    },
+    {
+      "Id": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\css\\editar.css",
+      "PackagePath": "staticwebassets\\css\\editar.css"
+    },
+    {
+      "Id": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\css\\financas.css",
+      "PackagePath": "staticwebassets\\css\\financas.css"
+    },
+    {
       "Id": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\css\\home.css",
       "PackagePath": "staticwebassets\\css\\home.css"
     },

@@ -63,7 +63,7 @@ namespace MoneyTrack
             MySqlConnection conexao = new MySqlConnection(DadosConexao);
             conexao.Open();
 
-            string query = "INSERT INTO Financas(Tipo, Valor, Descricao, DataTransacao) VALUES (@Tipo, @Valor, @Descricao, @DataTransacao)";
+            string query = "INSERT INTO Financas(Tipo, Valor, Descrição, DataTransacao) VALUES (@Tipo, @Valor, @Descricao, @DataTransacao)";
 
             MySqlCommand comando = new MySqlCommand(query, conexao);
 
