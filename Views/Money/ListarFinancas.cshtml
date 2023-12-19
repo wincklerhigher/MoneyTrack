@@ -1,0 +1,34 @@
+@model List<MoneyTrack.Models.Financas>
+@{
+    ViewData["Title"] = "Lista de Finanças";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/listaFinancas.css" />
+</head>
+
+<h2>Finanças</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>IdFinancas</th>
+            <th>Tipo</th>
+            <th>Valor</th>
+            <th>Descrição</th>
+            <th>Data de Transação</th>            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var financas in Model)
+        {
+            <tr>
+                <td>@financas.IdFinancas</td>
+                <td>@financas.Tipo</td>
+                <td>@financas.Valor</td>
+                <td>@financas.Descricao</td>
+                <td>@financas.DataTransacao</td>        
+            </tr>
+        }
+    </tbody>
+</table>

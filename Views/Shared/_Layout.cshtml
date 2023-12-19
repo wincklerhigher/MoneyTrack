@@ -12,52 +12,52 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MoneyTrack</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">                           
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>                            
-                        </li> 
-                        @if(Context.Session.GetInt32("IdContato") == null)
-                        {
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cadastro" asp-action="Login">Login</a>
-                        </li>
-                        }
-                        @if(Context.Session.GetInt32("IdContato") != null) 
-                        {                        
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cadastro" asp-action="Contato">Contato</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cadastro" asp-action="Financas">Finanças</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cadastro" asp-action="Lista">Listagem</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cadastro" asp-action="BTC">BTC Preço</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cadastro" asp-action="Logout">Sair</a>
-                        </li>    
-                        <li class="nav-item">
-                        <span class="nav-link text-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MoneyTrack</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                @if(Context.Session.GetInt32("IdContato") == null)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Cadastro" asp-action="Login">Login</a>
+                    </li>
+                }
+                @if(Context.Session.GetInt32("IdContato") != null) 
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Cadastro" asp-action="Contato">Contato</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Cadastro" asp-action="Lista">Lista Contatos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Cadastro" asp-action="Financas">Finanças</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Cadastro" asp-action="listagemFinancas">Lista Finanças</a>
+                    </li>                   
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Cadastro" asp-action="BTC">BTC Preço</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Cadastro" asp-action="Logout">Sair</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">
                             Usuário Logado: <strong>@Context.Session.GetString("NomeUsuario")</strong>
                         </span>
-                        </li>
-                        }                        
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+                    </li>
+                }
+            </ul>
+        </div>
+    </nav>
+</header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

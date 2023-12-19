@@ -77,6 +77,13 @@ namespace MoneyTrack
     );
 
         endpoints.MapControllerRoute(
+        name: "listagemFinancas",
+        pattern: "Cadastro/listagemFinancas",
+        defaults: new { controller = "Money", action = "ListarFinancas" }
+    );
+
+
+        endpoints.MapControllerRoute(
         name: "BTC",
         pattern: "Cadastro/BTC",
         defaults: new { controller = "Crypto", action = "BTC" }

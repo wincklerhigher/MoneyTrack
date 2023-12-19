@@ -1,7 +1,7 @@
 using System;
 
 namespace MoneyTrack.Models
-{
+{    
     public class Financas
     {
         public int IdFinancas { get; set; }
@@ -9,5 +9,7 @@ namespace MoneyTrack.Models
         public decimal Valor { get; set; }
         public string Descricao { get; set; }
         public DateTime? DataTransacao { get; set; }
+        
+        public Contato Contato { get; set; }
     }
 }

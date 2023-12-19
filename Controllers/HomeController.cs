@@ -47,6 +47,12 @@ namespace MoneyTrack.Controllers
         return View(listaContatos);
     }
 
+     public IActionResult ListarFinancas()
+    {
+        List<Financas> listaFinancas = _repository.ListarFinancas(); 
+        return View(listaFinancas);
+    }
+
     public IActionResult Login()
     {
         return View();

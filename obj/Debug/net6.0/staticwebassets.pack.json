@@ -21,8 +21,12 @@
       "PackagePath": "staticwebassets\\css\\home.css"
     },
     {
-      "Id": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\css\\listagem.css",
-      "PackagePath": "staticwebassets\\css\\listagem.css"
+      "Id": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\css\\listaContatos.css",
+      "PackagePath": "staticwebassets\\css\\listaContatos.css"
+    },
+    {
+      "Id": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\css\\listaFinancas.css",
+      "PackagePath": "staticwebassets\\css\\listaFinancas.css"
     },
     {
       "Id": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\css\\site.css",

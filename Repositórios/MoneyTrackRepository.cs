@@ -63,7 +63,7 @@ namespace MoneyTrack
             MySqlConnection conexao = new MySqlConnection(DadosConexao);
             conexao.Open();
 
-            string query = "INSERT INTO Financas(Tipo, Valor, Descrição, DataTransacao) VALUES (@Tipo, @Valor, @Descricao, @DataTransacao)";
+            string query = "INSERT INTO Financas(Tipo, Valor, Descricao, DataTransacao) VALUES (@Tipo, @Valor, @Descricao, @DataTransacao)";
 
             MySqlCommand comando = new MySqlCommand(query, conexao);
 
@@ -145,6 +145,33 @@ namespace MoneyTrack
     }
     return listaContatos;
         }
+
+       public List<Financas> ListarFinancas()
+{
+    using MySqlConnection conexao = new MySqlConnection(DadosConexao);
+    conexao.Open();
+
+    string query = "SELECT * FROM Financas";
+
+    MySqlCommand command = new MySqlCommand(query, conexao);
+
+    using MySqlDataReader reader = command.ExecuteReader();
+
+    List<Financas> listagemFinancas = new List<Financas>();
+
+    while (reader.Read())
+    {
+        Financas financas = new Financas();
+        financas.IdFinancas = reader.GetInt32("IdFinancas");
+        financas.Tipo = reader.GetString("Tipo");
+        financas.Valor = reader.GetDecimal("Valor");
+        financas.Descricao = reader.GetString("Descricao");
+        financas.DataTransacao = reader.GetDateTime("DataTransacao");
+
+        listagemFinancas.Add(financas);
+    }
+        return listagemFinancas;
+}
 
         public void AtualizarContato(Contato contato)
 {

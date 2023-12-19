@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5lcLaJ9IBs8o/df8vPFCBSowhdTPr2kWNj/DYdWCTS4=",
+  "Hash": "zCwx12MWomCXn5P5NqrtrttlstSEE8WYc1DfShJH3Dg=",
   "Source": "MoneyTrack",
   "BasePath": "_content/MoneyTrack",
   "Mode": "Default",
@@ -102,12 +102,12 @@
       "OriginalItemSpec": "wwwroot\\css\\home.css"
     },
     {
-      "Identity": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\css\\listagem.css",
+      "Identity": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\css\\listaContatos.css",
       "SourceId": "MoneyTrack",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\",
       "BasePath": "_content/MoneyTrack",
-      "RelativePath": "css/listagem.css",
+      "RelativePath": "css/listaContatos.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -116,7 +116,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\listagem.css"
+      "OriginalItemSpec": "wwwroot\\css\\listaContatos.css"
+    },
+    {
+      "Identity": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\css\\listaFinancas.css",
+      "SourceId": "MoneyTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\",
+      "BasePath": "_content/MoneyTrack",
+      "RelativePath": "css/listaFinancas.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\listaFinancas.css"
     },
     {
       "Identity": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\css\\site.css",
