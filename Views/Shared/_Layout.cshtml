@@ -29,22 +29,26 @@
                     </li>
                 }
                 @if(Context.Session.GetInt32("IdContato") != null) 
-                {
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Cadastro" asp-action="Contato">Contato</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Cadastro" asp-action="Lista">Lista Contatos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Cadastro" asp-action="Financas">Finanças</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Cadastro" asp-action="ListarFinancas">Lista Finanças</a>
-                    </li>                   
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Cadastro" asp-action="BTC">BTC Preço</a>
-                    </li>
+                {                    
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="contatoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Contato
+    </a>
+    <div class="dropdown-menu" aria-labelledby="contatoDropdown">
+        <a class="dropdown-item" asp-area="" asp-controller="Cadastro" asp-action="Contato">Cadastro</a>
+        <a class="dropdown-item" asp-area="" asp-controller="Cadastro" asp-action="Lista">Lista de Contatos</a>
+    </div>
+</li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="financasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Finanças
+    </a>
+    <div class="dropdown-menu" aria-labelledby="financasDropdown">
+        <a class="dropdown-item" asp-area="" asp-controller="Cadastro" asp-action="Financas">Cadastro</a>
+        <a class="dropdown-item" asp-area="" asp-controller="Cadastro" asp-action="ListarFinancas">Lista de Finanças</a>
+        <a class="dropdown-item" asp-area="" asp-controller="Cadastro" asp-action="BTC">BTC Preço</a>
+    </div>
+</li>
                     <li class="nav-item">
                         <a class="nav-link" asp-area="" asp-controller="Cadastro" asp-action="Logout">Sair</a>
                     </li>
