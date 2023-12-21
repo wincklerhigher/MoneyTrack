@@ -58,24 +58,25 @@ namespace MoneyTrack
             conexao.Close();
         }
 
-       public void InserirFinancas(Financas financas)
+public void InserirFinancas(Financas financas)
 {
     MySqlConnection conexao = new MySqlConnection(DadosConexao);
     conexao.Open();
 
-    string query = "INSERT INTO Financas(IdContato, Tipo, Valor, Descricao, DataTransacao) VALUES (@IdContato, @Tipo, @Valor, @Descricao, @DataTransacao)";
+    string query = "INSERT INTO Financas(Tipo, Valor, Descricao, DataTransacao, Usuario) VALUES (@Tipo, @Valor, @Descricao, @DataTransacao, @Usuario)";
 
     MySqlCommand comando = new MySqlCommand(query, conexao);
-    
+
     comando.Parameters.AddWithValue("@Tipo", financas.Tipo);
     comando.Parameters.AddWithValue("@Valor", financas.Valor);
     comando.Parameters.AddWithValue("@Descricao", financas.Descricao);
     comando.Parameters.AddWithValue("@DataTransacao", financas.DataTransacao);
+    comando.Parameters.AddWithValue("@Usuario", financas.Usuario);
 
     comando.ExecuteNonQuery();
 
     conexao.Close();
-}
+}  
 
         public Contato ValidarLogin(Contato contato)
         {
@@ -157,7 +158,7 @@ namespace MoneyTrack
 
     using MySqlDataReader reader = command.ExecuteReader();
 
-    List<Financas> ListarFinancas = new List<Financas>();
+    List<Financas> listarFinancas = new List<Financas>();
 
     while (reader.Read())
     {
@@ -168,46 +169,14 @@ namespace MoneyTrack
         financas.Descricao = reader.GetString("Descricao");
         financas.DataTransacao = reader.GetDateTime("DataTransacao");
 
-        ListarFinancas.Add(financas);
+        // Certifique-se de que o campo Usuario seja lido corretamente
+        if (!reader.IsDBNull(reader.GetOrdinal("Usuario")))
+            financas.Usuario = reader.GetString("Usuario");
+
+        listarFinancas.Add(financas);
     }
-        return ListarFinancas;
-}
 
-    public List<Contato> ObterTodosContatos()
-{
-    List<Contato> listaContatos = new List<Contato>();
-
-    using (MySqlConnection conexao = new MySqlConnection(DadosConexao))
-    {
-        conexao.Open();
-
-        string query = "SELECT * FROM Contato";
-
-        using (MySqlCommand command = new MySqlCommand(query, conexao))
-        using (MySqlDataReader reader = command.ExecuteReader())
-        {
-            while (reader.Read())
-            {
-                Contato contato = new Contato();
-                contato.IdContato = reader.GetInt32("IdContato");
-
-                if (!reader.IsDBNull(reader.GetOrdinal("Nome")))
-                    contato.Nome = reader.GetString("Nome");
-
-                if (!reader.IsDBNull(reader.GetOrdinal("Email")))
-                    contato.Email = reader.GetString("Email");
-
-                if (!reader.IsDBNull(reader.GetOrdinal("Mensagem")))
-                    contato.Mensagem = reader.GetString("Mensagem");
-
-                if (!reader.IsDBNull(reader.GetOrdinal("DataEnvio")))
-                    contato.DataEnvio = reader.GetDateTime("DataEnvio");
-
-                listaContatos.Add(contato);
-            }
-        }
-    }
-                return listaContatos;
+    return listarFinancas;
 }
 
         public void AtualizarContato(Contato contato)
@@ -225,6 +194,21 @@ namespace MoneyTrack
     comando.Parameters.AddWithValue("@Mensagem", (object)contato.Mensagem ?? DBNull.Value);    
     comando.Parameters.AddWithValue("@Login", contato.Login);
     comando.Parameters.AddWithValue("@Senha", contato.Senha);
+
+    comando.ExecuteNonQuery();
+
+    conexao.Close();
+}
+
+    public void ExcluirFinancas(int idFinancas)
+{
+    MySqlConnection conexao = new MySqlConnection(DadosConexao);
+    conexao.Open();
+
+    string query = "DELETE FROM Financas WHERE IdFinancas = @IdFinancas";
+
+    MySqlCommand comando = new MySqlCommand(query, conexao);
+    comando.Parameters.AddWithValue("@IdFinancas", idFinancas);
 
     comando.ExecuteNonQuery();
 

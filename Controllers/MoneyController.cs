@@ -38,18 +38,10 @@ namespace MoneyTrack.Controllers
 public IActionResult CadastroFinancas()
 {            
     try
-    {
-        // Obtenha a lista de todos os contatos
-        var usuarios = _repository.ObterTodosContatos();
-
-        // Inicialize uma nova instância de FinancasViewModel
+    {         
         var viewModel = new FinancasViewModel
         {
-            // Inicialize Financas conforme necessário
-            Financas = new Financas(),
-
-            // Atribua a lista de usuários ao ViewModel
-            Usuarios = usuarios
+            Financas = new Financas(),                        
         };
 
         return View(viewModel);
@@ -62,32 +54,33 @@ public IActionResult CadastroFinancas()
     }
 }
 
-      [HttpPost]
+[HttpPost]
 public IActionResult CadastroFinancas(Financas financas)
 {
     try
     {
         if (!ModelState.IsValid)
-        {            
+        {
             foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
-            {         
+            {
                 Console.WriteLine(error.ErrorMessage);
             }
-            
+
             return View();
         }
 
-        new MoneyTrackRepository().InserirFinancas(financas);        
+        _repository.InserirFinancas(financas);
         ViewBag.Mensagem = "Cadastro de finanças realizado com sucesso!";
         return View();
     }
     catch (Exception ex)
-    {        
+    {
         Console.WriteLine(ex.Message);
         ViewBag.Mensagem = "Erro ao cadastrar as finanças. Por favor, tente novamente.";
         return View();
     }
-} 
+}  
+
         public IActionResult Remover (int Id)
     {
         MoneyTrackRepository contato = new MoneyTrackRepository();
@@ -172,5 +165,21 @@ public IActionResult Editar(Contato contato)
         
         return View(listagemContatos);
     }
+
+    [HttpPost]
+public IActionResult ExcluirFinancas(int idFinancas)
+{
+    try
+    {
+        _repository.ExcluirFinancas(idFinancas);
+        ViewBag.Mensagem = "Finanças excluídas com sucesso!";
+        return RedirectToAction("ListarFinancas", "Money");
+    }
+    catch (Exception ex)
+    {
+        ViewBag.Mensagem = $"Erro ao excluir finanças: {ex.Message}";
+        return View("ListarFinancas", _repository.ListarFinancas());
+    }
+}
  }
     }

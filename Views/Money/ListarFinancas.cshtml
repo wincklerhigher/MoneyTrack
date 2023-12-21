@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="~/css/listaFinancas.css" />
 </head>
 
-<h2>Finanças</h2>
-
 <table class="table">
     <thead>
         <tr>
@@ -16,7 +14,9 @@
             <th>Tipo</th>
             <th>Valor</th>
             <th>Descrição</th>
-            <th>Data de Transação</th>            
+            <th>Data de Transação</th>
+            <th>Nome do Usuário</th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -27,7 +27,14 @@
                 <td>@financas.Tipo</td>
                 <td>@financas.Valor</td>
                 <td>@financas.Descricao</td>
-                <td>@financas.DataTransacao</td>        
+                <td>@financas.DataTransacao</td>
+                <td>@financas.Usuario</td>
+                <td>
+                    <form method="post" asp-action="ExcluirFinancas">
+                        <input type="hidden" name="idFinancas" value="@financas.IdFinancas" />
+                        <button type="submit" class="btn btn-danger">Excluir</button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>
