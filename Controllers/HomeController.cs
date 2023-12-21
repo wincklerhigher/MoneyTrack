@@ -25,22 +25,7 @@ namespace MoneyTrack.Controllers
         _repository.TesteConexao();
         return View();
     }
-
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    public IActionResult Contato()
-    {
-        return View();
-    }
-
-    public IActionResult Financas()
-    {
-        return View();
-    }
-
+    
     public IActionResult Listar()
     {
         List<Contato> listaContatos = _repository.Listar();

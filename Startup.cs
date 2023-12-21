@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MoneyTrack.Models; 
 
 namespace MoneyTrack
 {
@@ -28,6 +29,7 @@ namespace MoneyTrack
         options.MinimumSameSitePolicy = SameSiteMode.None;
     });
 
+    services.AddScoped<IContatoService, ContatoService>();
     services.AddScoped<MoneyTrackRepository>(); // Register the AlunosRepository service
 
     services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -77,8 +79,8 @@ namespace MoneyTrack
     );
 
         endpoints.MapControllerRoute(
-        name: "listagemFinancas",
-        pattern: "Cadastro/listagemFinancas",
+        name: "ListarFinancas",
+        pattern: "Cadastro/ListarFinancas",
         defaults: new { controller = "Money", action = "ListarFinancas" }
     );
 

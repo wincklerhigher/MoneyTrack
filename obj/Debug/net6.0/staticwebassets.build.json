@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zCwx12MWomCXn5P5NqrtrttlstSEE8WYc1DfShJH3Dg=",
+  "Hash": "dVZWWBfRfncnZU4iBJ99Xk3IfpLOiz/p0DERlE2sxcY=",
   "Source": "MoneyTrack",
   "BasePath": "_content/MoneyTrack",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\listaFinancas.css"
+    },
+    {
+      "Identity": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\css\\login.css",
+      "SourceId": "MoneyTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\",
+      "BasePath": "_content/MoneyTrack",
+      "RelativePath": "css/login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
       "Identity": "C:\\Users\\Winckler\\Desktop\\SENAC (ATUAL)\\INTEGRADOR\\moneytrack\\wwwroot\\css\\site.css",

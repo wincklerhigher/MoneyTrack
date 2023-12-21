@@ -30,15 +30,37 @@ namespace MoneyTrack.Controllers
                 return View();
             }
 
-            new MoneyTrackRepository().InserirContato(contato);
+            _repository.InserirContato(contato);
             ViewBag.Mensagem = "Cadastro de contato realizado com sucesso!";
             return View();
         }
 
-        public IActionResult CadastroFinancas()
+public IActionResult CadastroFinancas()
+{            
+    try
+    {
+        // Obtenha a lista de todos os contatos
+        var usuarios = _repository.ObterTodosContatos();
+
+        // Inicialize uma nova instância de FinancasViewModel
+        var viewModel = new FinancasViewModel
         {
-            return View();
-        }
+            // Inicialize Financas conforme necessário
+            Financas = new Financas(),
+
+            // Atribua a lista de usuários ao ViewModel
+            Usuarios = usuarios
+        };
+
+        return View(viewModel);
+    }
+    catch (Exception ex)
+    {
+        ViewData["ErroUsuarios"] = ex.Message;
+ 
+        return View();
+    }
+}
 
       [HttpPost]
 public IActionResult CadastroFinancas(Financas financas)
@@ -46,25 +68,21 @@ public IActionResult CadastroFinancas(Financas financas)
     try
     {
         if (!ModelState.IsValid)
-        {
-            // Log validation errors
+        {            
             foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
-            {
-                // Log or debug the error
+            {         
                 Console.WriteLine(error.ErrorMessage);
             }
-
-            // Return the view with validation errors
+            
             return View();
         }
 
-        new MoneyTrackRepository().InserirFinancas(financas);
+        new MoneyTrackRepository().InserirFinancas(financas);        
         ViewBag.Mensagem = "Cadastro de finanças realizado com sucesso!";
         return View();
     }
     catch (Exception ex)
-    {
-        // Log or debug the exception
+    {        
         Console.WriteLine(ex.Message);
         ViewBag.Mensagem = "Erro ao cadastrar as finanças. Por favor, tente novamente.";
         return View();
@@ -91,6 +109,7 @@ public IActionResult CadastroFinancas(Financas financas)
 
     if (contato == null)
     {
+        ViewBag.Mensagem = "Contato não encontrado.";
         return RedirectToAction("Lista", "Money");
     }
 
@@ -129,14 +148,14 @@ public IActionResult Editar(Contato contato)
             HttpContext.Session.SetInt32("IdContato", contatoEncontrado.IdContato);
             HttpContext.Session.SetString("NomeUsuario", contatoEncontrado.Nome);
 
-            return RedirectToAction("Lista", "Money"); 
+            return RedirectToAction("BTC", "Crypto"); 
         }
     }
     public IActionResult Logout()
     {
         HttpContext.Session.Clear();
         return View("Login");
-    }
+    }  
 
     public IActionResult ListarFinancas()
     {
@@ -153,5 +172,5 @@ public IActionResult Editar(Contato contato)
         
         return View(listagemContatos);
     }
-    }
+ }
     }

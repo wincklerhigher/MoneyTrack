@@ -8,8 +8,6 @@ namespace MoneyTrack.Models
         public string Tipo { get; set; }
         public decimal Valor { get; set; }
         public string Descricao { get; set; }
-        public DateTime? DataTransacao { get; set; }
-        
-        public Contato Contato { get; set; }
+        public DateTime? DataTransacao { get; set; }        
     }
 }
