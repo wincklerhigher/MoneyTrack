@@ -10,9 +10,12 @@
 <form method="POST" asp-action="CadastroFinancas">   
     <p>
         <label asp-for="Financas.Tipo">Tipo:</label>
-        <input asp-for="Financas.Tipo">
-    </p>
-    
+        <select asp-for="Financas.Tipo">
+            <option value="PIX">PIX</option>
+            <option value="Crédito">Crédito</option>
+            <option value="Débito">Débito</option>        
+        </select>
+    </p>    
     <p>
         <label asp-for="Financas.Valor">Valor:</label>
         <input asp-for="Financas.Valor">
@@ -26,7 +29,7 @@
         <input asp-for="Financas.DataTransacao">
     </p>
     <p>
-        <label asp-for="Financas.Usuario">Usuário:</label>
+        <label asp-for="Financas.Usuario">Nome Cadastrado:</label>
         <input asp-for="Financas.Usuario">
     </p>
     <p>
