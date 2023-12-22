@@ -18,8 +18,7 @@ namespace MoneyTrack
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
         [Obsolete]
         public void ConfigureServices(IServiceCollection services)
 {
@@ -40,8 +39,7 @@ namespace MoneyTrack
         options.Cookie.Name = "MoneyTrack";
         options.Cookie.IsEssential = true;
     });
-}
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+}        
        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
     if (env.IsDevelopment())
