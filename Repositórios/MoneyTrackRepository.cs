@@ -9,7 +9,7 @@ namespace MoneyTrack
 {
     public class MoneyTrackRepository
     {
-        private const string DadosConexao = "Database=moneytrack; Data Source=localhost; User Id=root; AllowZeroDateTime=True; Allow User Variables=True;";
+        private const string DadosConexao = "Database=moneytrack; Data Source=localhost; User Id=root; Password=000666; AllowZeroDateTime=True; Allow User Variables=True;";
 
         public void TesteConexao()
         {
