@@ -31,7 +31,7 @@ namespace MoneyTrack
     services.AddScoped<IContatoService, ContatoService>();
     services.AddScoped<MoneyTrackRepository>(); // Register the AlunosRepository service
 
-    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
     services.AddMemoryCache();
     services.AddSession(options =>
     {
