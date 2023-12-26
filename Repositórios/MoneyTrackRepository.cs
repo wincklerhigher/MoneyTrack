@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using MySqlConnector;
 using MoneyTrack.Models;
 
@@ -9,7 +7,7 @@ namespace MoneyTrack
 {
     public class MoneyTrackRepository
     {
-        private const string DadosConexao = "Database=moneytrack; Data Source=localhost; User Id=root; Password=000666; AllowZeroDateTime=True; Allow User Variables=True;";
+        private const string DadosConexao = "Database=moneytrack; Data Source=localhost; User Id=root; Password=123456; AllowZeroDateTime=True; Allow User Variables=True;";
 
         public void TesteConexao()
         {
