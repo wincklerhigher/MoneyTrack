@@ -24,7 +24,7 @@
                 </li>
                 @if(Context.Session.GetInt32("IdContato") == null)
                 {
-                    <li class="nav-item">
+                    <li class="nav-item" style="display: none;">
                         <a class="nav-link" asp-area="" asp-controller="Cadastro" asp-action="Login">Login</a>
                     </li>
                 }

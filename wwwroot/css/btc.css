@@ -45,8 +45,8 @@ body {
     margin-top: 20px;
     border-radius: 5px;
     position: relative;
-    background-color: #007bff; 
-    border: 2px solid #007bff; 
+    background-color: #0171e7; 
+    border: 2px solid #0171e7; 
 }
 
 .nav-link.text-dark:before {
@@ -57,12 +57,12 @@ body {
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    border: 2px solid #007bff; 
+    border: 2px solid #0171e7; 
     border-radius: 5px;
     z-index: -1;
 }
 
 .nav-link.text-dark:hover {
-    background-color: #0056b3; 
+    background-color: #17a2b8; 
     color: #ffffff;
 }
