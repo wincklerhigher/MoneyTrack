@@ -1,0 +1,42 @@
+@model MoneyTrack.Models.FinancasViewModel
+@{
+    ViewData["Title"] = "Cadastro de Finanças";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/financas.css" />
+</head>
+
+<form method="POST" asp-action="CadastroFinancas">   
+    <p>
+        <label asp-for="Financas.Tipo">Tipo:</label>
+        <select asp-for="Financas.Tipo">
+            <option value="PIX">PIX</option>
+            <option value="Crédito">Crédito</option>
+            <option value="Débito">Débito</option>        
+        </select>
+    </p>    
+    <p>
+        <label asp-for="Financas.Valor">Valor:</label>
+        <input asp-for="Financas.Valor">
+    </p>
+    <p>
+        <label asp-for="Financas.Descricao">Descrição:</label>
+        <input asp-for="Financas.Descricao">
+    </p>
+    <p>
+        <label asp-for="Financas.DataTransacao">Data de Transação:</label>
+        <input asp-for="Financas.DataTransacao">
+    </p>
+    <p>
+        <label asp-for="Financas.Usuario">Seu Nome:</label>
+        <input asp-for="Financas.Usuario">
+    </p>
+    <p>
+        <input type="submit" value="Enviar">
+    </p>
+</form>
+
+<div style="text-align: center;">
+    <p>@ViewBag.Mensagem</p>
+</div>

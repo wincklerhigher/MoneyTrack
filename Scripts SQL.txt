@@ -1,0 +1,21 @@
+CREATE TABLE Contato (
+    IdContato INT AUTO_INCREMENT NOT NULL,
+    Nome VARCHAR(255),
+    Email VARCHAR(255),
+    Mensagem TEXT,
+    DataEnvio DATETIME,
+    Login VARCHAR(255),
+    Senha VARCHAR(16),
+    PRIMARY KEY (IdContato)
+);
+
+CREATE TABLE Financas (
+    IdFinancas INT AUTO_INCREMENT NOT NULL, 
+    Tipo VARCHAR(255),
+    Valor DECIMAL(10, 2),
+    Descrição TEXT, 
+    DataTransacao DATETIME,
+    IdContato INT,
+    PRIMARY KEY (IdFinancas),
+    FOREIGN KEY (IdContato) REFERENCES Contato(IdContato) ON DELETE CASCADE
+);

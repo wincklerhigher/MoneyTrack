@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/home.css">
+
+    <style>
+        body {
+        background: url('https://i.imgur.com/F0TWTMn.jpg');
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Seja bem-vindo!</h1>
+        <p class="lead">Tenha o controle das suas operações.</p>
+        <a class="btn btn-primary btn-lg" href="@Url.Action("Login", "Cadastro")" role="button">Começar</a>
+    </div>
+
+</body>
+</html>
