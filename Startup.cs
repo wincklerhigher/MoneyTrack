@@ -26,12 +26,12 @@ namespace MoneyTrack
     {
         options.CheckConsentNeeded = context => false;
         options.MinimumSameSitePolicy = SameSiteMode.None;
-    });
+    });    
 
     services.AddScoped<IContatoService, ContatoService>();
-    services.AddScoped<MoneyTrackRepository>(); // Register the AlunosRepository service
+    services.AddScoped<MoneyTrackRepository>(); // Register the MoneyTrackRepository service
 
-    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
     services.AddMemoryCache();
     services.AddSession(options =>
     {
