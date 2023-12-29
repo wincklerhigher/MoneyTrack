@@ -2,7 +2,6 @@ body {
     color: #fff;
     padding: 50px;
     font-family: 'Arial', sans-serif;
-    text-align: center;    
 }
 
 .jumbotron {
@@ -13,7 +12,6 @@ body {
 
 h1 {
     font-size: 3rem;
-    text-align: center;
 }
 
 p {

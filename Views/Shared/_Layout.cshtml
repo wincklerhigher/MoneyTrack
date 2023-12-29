@@ -8,7 +8,7 @@
     <title>@ViewData["Title"] - MoneyTrack</title>    
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />    
-    <link rel="stylesheet" href="~/css/home.css" />
+    <link rel="stylesheet" href="~/css/global.css" />
 </head>
 <body>
     <header>
@@ -68,12 +68,13 @@
         </main>
     </div>
 
-    <footer class="border-top footer">
-        <div class="container">
-            &copy; 2023 - MoneyTrack
-            <img src="https://i.imgur.com/U0amSpp.png" class="footer-image">            
-        </div>
-    </footer>
+   <footer class="border-top footer sticky-footer">
+  <div class="container footer-content">
+    <span>&copy; 2023 - MoneyTrack</span>
+    <img src="https://i.imgur.com/U0amSpp.png" class="footer-image">
+  </div>
+   </footer>
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

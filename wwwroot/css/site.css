@@ -35,14 +35,6 @@ html {
   }
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
@@ -62,4 +54,30 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+}
+
+.sticky-footer {
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+.footer-content span {
+  margin-right: 15px;
+}
+
+.footer-image {
+  max-width: 65px;
+  display: block;
+  margin-top: -5px;   
 }

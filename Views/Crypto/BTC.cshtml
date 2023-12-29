@@ -4,15 +4,14 @@
     <title>Crypto Price Display</title>    
     <link rel="stylesheet" type="text/css" href="/css/btc.css">
 </head>
-<body>    
-
+<body class="btc-page"> 
     <nav>
         <ul>    
         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>    
         </ul>
     </nav>
 
-    <div class="price-container">
+   <div class="price-container">
         <h1>Real-Time BTC Price</h1>
         <div class="price-value" id="BTC-price">Loading...</div>
     </div>
@@ -44,6 +43,5 @@
         updateBTCPrice();
         setInterval(updateBTCPrice, 30000); // 30 segundos
     </script>
-
 </body>
 </html>
