@@ -16,15 +16,19 @@ table {
 }
 
 .user-actions a {
+    color: #fff;
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-block;
     text-decoration: none;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    color: #333;
+    transition: background-color 0.3s ease;
 }
 
 .user-actions a:hover {
-    background-color: #f0f0f0;
+    background-color: #c82333;
+    text-decoration: none; 
 }
 
 th, td {
