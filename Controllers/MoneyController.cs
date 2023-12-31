@@ -31,7 +31,7 @@ namespace MoneyTrack.Controllers
             }
 
             _repository.InserirContato(contato);
-            ViewBag.Mensagem = "Cadastro de contato realizado com sucesso!";
+            ViewBag.Mensagem = "Cadastro realizado com sucesso!";
             return View();
         }
 
@@ -70,7 +70,7 @@ public IActionResult CadastroFinancas(Financas financas)
         }
 
         _repository.InserirFinancas(financas);
-        ViewBag.Mensagem = "Cadastro de finanças realizado com sucesso!";
+        ViewBag.Mensagem = "Cadastro realizado com sucesso!";
         return View();
     }
     catch (Exception ex)

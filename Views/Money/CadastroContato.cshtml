@@ -8,7 +8,7 @@
 </head>
 
 <form method="POST" asp-page-handler="CadastroContato">
-    
+
     <p>
         <label asp-for="Nome" style="color: #000;">Nome:</label>
         <input asp-for="Nome">
@@ -38,6 +38,11 @@
     </p>
 </form>
 
-<p>
-    @ViewBag.Mensagem
-</p>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var mensagem = '@ViewBag.Mensagem';
+        if (mensagem && mensagem.length > 0) {
+            alert(mensagem);
+        }
+    });
+</script>

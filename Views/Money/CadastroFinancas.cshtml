@@ -37,6 +37,11 @@
     </p>
 </form>
 
-<div style="text-align: center;">
-    <p>@ViewBag.Mensagem</p>
-</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var mensagem = '@ViewBag.Mensagem';
+        if (mensagem && mensagem.length > 0) {
+            alert(mensagem);
+        }
+    });
+</script>
