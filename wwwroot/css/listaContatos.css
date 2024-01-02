@@ -16,9 +16,7 @@ table {
 }
 
 .user-actions a {
-    color: #fff;
-    background-color: #dc3545;
-    border: 1px solid #dc3545;
+    color: #fff;    
     padding: 6px 12px;
     border-radius: 4px;
     display: inline-block;
@@ -26,9 +24,20 @@ table {
     transition: background-color 0.3s ease;
 }
 
+.user-actions .excluir {
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.user-actions .editar {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+}
+
 .user-actions a:hover {
-    background-color: #c82333;
-    text-decoration: none; 
+    text-decoration: none;
+    background-color: #5f5f5f;
+    font-weight: bold;
 }
 
 th, td {
